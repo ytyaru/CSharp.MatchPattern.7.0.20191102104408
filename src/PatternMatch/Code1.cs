@@ -17,6 +17,8 @@ namespace PatternMatch
             Run1("A");
             Run1(null);
 
+            Console.WriteLine($"{Run2(0)}"); // 0
+            Console.WriteLine($"{Run2("キーワード")}"); // 100
             Console.WriteLine($"{Run2(1)}"); // 1
             Console.WriteLine($"{Run2("ABC")}"); // 3
             Console.WriteLine($"{Run2('A')}"); // -1
@@ -45,6 +47,7 @@ namespace PatternMatch
             {
                 // 定数パターン
                 case 0: return 0;
+                case "キーワード": return 100;
                 // 宣言パターン
                 case int i: return i;
                 case string s: return s.Length;
